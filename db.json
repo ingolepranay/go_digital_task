@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstName": "nakul",
+      "middleName": "mangesh",
+      "lastName": "ingole",
+      "email": "ingole@gmail.com",
+      "phoneNumber": 9860820363,
+      "address1": "Amravati",
+      "address2": "",
+      "city": "Amravati",
+      "state": "MH",
+      "zip": "444602",
+      "id": 201
+    }
+  ]
+}

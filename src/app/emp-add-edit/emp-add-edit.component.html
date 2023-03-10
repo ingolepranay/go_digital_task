@@ -1,0 +1,81 @@
+<div mat-dialog-title>
+    <h1>Person's information</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" placeholder="" formControlName="firstName">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Middle Name</mat-label>
+                <input matInput type="text" formControlName="middleName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" placeholder="" formControlName="lastName">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="email">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput type="number"  placeholder="10 digit mo. no."  formControlName="phoneNumber">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('pattern')">Phone Number must be 10 digits</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Address 1</mat-label>
+                <input matInput  formControlName="address1">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Address 2</mat-label>
+                <input matInput  formControlName="address2">
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput  formControlName="city">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+
+
+           <mat-form-field appearance="outline">
+                <mat-label>State</mat-label>
+                <input matInput  formControlName="state">
+                <mat-error *ngIf="empForm.controls['phoneNumber'].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>ZIP</mat-label>
+                <input matInput placeholder="put zipcode here" type="text" formControlName="zip">
+                <mat-error *ngIf="empForm.controls['zip'].hasError('required')">This field is required</mat-error>
+                <mat-error *ngIf="empForm.controls['zip'].hasError('pattern')">Zipcode must be 6 digits</mat-error>
+            </mat-form-field>
+        </div>
+
+      
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>
